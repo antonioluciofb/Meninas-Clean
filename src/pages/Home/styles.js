@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    background-color: #EAECFF; 
+    background-color: rgba(1, 115, 186, 0.05); 
     max-width: 960px;
     height: 100%;
-    padding: 20px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
     header {
-      width: 100%;
+      margin: 20px;
+      width: 90%;
       position: relative;
       display: flex;
       align-items: center;
@@ -48,7 +48,7 @@ export const Container = styled.div`
     
       margin-top: 30px;  
       font-family: Arial, Helvetica, sans-serif;  
-      width: 100%;
+      width: 90%;
       height: 40px;
       border-radius: 5px;
       border: 0;
@@ -57,12 +57,26 @@ export const Container = styled.div`
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.40);
     }
 
-    
+    footer {
+      margin-top: 30px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 10px 0;
+      background: #0074bc;
+
+      svg {
+        margin-right: 20px;
+      }
+    }
 `;
 
 export const Title = styled.h1`
 
   margin-top: 35px;
+  margin-left: 20px;
 
   align-self: flex-start;
   font-size: 18px;
@@ -147,4 +161,15 @@ export const AddButton = styled.button`
   svg {
     margin-right: 8px;
   }
+`
+
+export const Contact = styled.div`
+  margin-left: 20px;
+
+  p, strong {
+    font-size: 12px;
+    color: #fff;
+    margin-top: 6px;
+  }
+
 `

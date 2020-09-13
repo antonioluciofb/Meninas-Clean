@@ -1,11 +1,23 @@
-import React from 'react';
-import {Container, Title, Product, AddButton, Menu} from './styles';
-import { FaShoppingBag, BsHouseFill, FaTshirt } from "react-icons/all";
+import React, { useEffect, useState } from 'react';
+import {Container, Title, Product, AddButton, Menu, Contact} from './styles';
+import { FaShoppingBag, BsHouseFill, FaTshirt, FiInstagram } from "react-icons/all";
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/cart';
+import api from '../../services/api';
+import produtos from '../../data';
 
 function Home() {
   const { addToCart } = useCart();
+  const [products, setProducts] = useState(produtos);
+
+  // useEffect(() => {
+  //   async function loadProducts() {
+  //     const response = await api.get('produtos');
+  //     setProducts(response.data)
+  //   }
+
+  //   loadProducts()
+  // }, [])
 
   return (
     <Container>
@@ -26,88 +38,19 @@ function Home() {
    </Title>
 
     <Menu>
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
+      { products !== undefined && products.casa.map(product => 
+        (
+          <Product key={product.id}>
+              <img src={product.image_url} alt={product.nome} />
+              <p>{product.nome}</p>
+              <strong>{product.valor}</strong>
 
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
-
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
-
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
-
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
-
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
-
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
-
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
-
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
-
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
-
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
+              <AddButton type="button"> 
+                <FaShoppingBag size={14} color="#fff" />
+                ADICIONAR
+              </AddButton>
+       </Product>
+        ))}
       </Menu>
 
       <Title>
@@ -116,70 +59,35 @@ function Home() {
       </Title>
 
       <Menu>
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
+      { products !== undefined && products.roupas.map(product => 
+        (
+          <Product key={product.id}>
+              <img src={product.image_url} alt={product.nome} />
+              <p>{product.nome}</p>
+              <strong>{product.valor}</strong>
 
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
-
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
-
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
-
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
-
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
-
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
-
-      <Product>
-        <img src="https://protelimp.com.br/wp-content/uploads/2017/04/alcool-perfumado-lavanda-itaja.jpg" alt="nomeProduto" />
-        <p>Álcool Perfumado</p>
-        <strong>R$10,00</strong>
-
-        <AddButton type="button"> 
-          <FaShoppingBag size={14} color="#fff" />
-          ADICIONAR
-        </AddButton>
-      </Product>
+              <AddButton type="button"> 
+                <FaShoppingBag size={14} color="#fff" />
+                ADICIONAR
+              </AddButton>
+       </Product>
+        ))}
       </Menu>
     
+    <footer>
+      <Contact>
+        <strong>Entre em contato:</strong>
+        <p>(27) 98126-4191 TIM</p>
+        <p>(27) 98149-2555 VIVO</p>
+        <p>limpezameninas@gmail.com</p>
+      </Contact>
+
+
+      <a href="https://www.instagram.com/meninasclean/">
+      <FiInstagram size={30} color="#fff" />
+      </a>    
+      
+    </footer>
   </Container>
   );
 }
