@@ -3,28 +3,52 @@ import styled from 'styled-components';
 export const Container = styled.div`
     background-color: #EAECFF; 
     max-width: 960px;
-    height: 100vh;
+
+    padding: 20px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    div {
-      width: 80%;
+    header {
+      width: 100%;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+
+      img {
+        width: 80px;
+        margin-top: 20px;
+      }
+
+      span {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: #E52B2B;
+
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        top: 25px;
+        right: -10px;
+      }
     }
-    img {
-      width: 80px;
-      margin-top: 20px;
-    }
+
 
     input {
     
       margin-top: 30px;  
       font-family: Arial, Helvetica, sans-serif;  
-      width: 80%;
+      width: 100%;
       height: 40px;
       border-radius: 5px;
       border: 0;
@@ -32,41 +56,83 @@ export const Container = styled.div`
       padding-left: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.40);
     }
+
+    
 `;
 
 export const Title = styled.h1`
+
+  margin-top: 35px;
+
+  align-self: flex-start;
   font-size: 18px;
   font-weight: bold;
   color: #000;
+
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-left: 8px;
+  }
 `
+
+export const Menu = styled.div`
+
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+`
+
 
 export const Product = styled.div`
   width: 130px;
   height: 160px;
-    border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  background: #fff;
 
   img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    margin: 20px 0;
+    margin: 10px 0 15px;
   }
 
-p, strong {
+  p, strong {
     font-size: 10px;
     color: #000;
-
+    margin-bottom: 5px;
   }
 
 `
 export const AddButton = styled.button`
+  cursor: pointer;
   display: flex;
   align-items: center;
- 
+  justify-content: center;
+
+  border-radius: 4px;
+  width: 80%;
+  padding: 4px 0;
+
+  border: 0;
+  outline: 0;
+
+  background: #1898F4;
 
   font-size: 10px;
-  color: #000;
+  font-weight: bold;
+  color: #fff;
+
+  svg {
+    margin-right: 8px;
+  }
 `
