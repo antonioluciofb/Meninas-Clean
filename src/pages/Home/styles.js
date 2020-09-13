@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     background-color: #EAECFF; 
     max-width: 960px;
-
+    height: 100%;
     padding: 20px;
 
     display: flex;
@@ -81,17 +81,23 @@ export const Menu = styled.div`
 
   margin-top: 15px;
   width: 100%;
+  height: 200px;
   display: flex;
-  justify-content: space-between;
+	overflow-x: scroll;
+  
 
 `
 
 
 export const Product = styled.div`
-  width: 130px;
-  height: 160px;
+
+  width: 150px;
+  height: 175px;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+
+  margin: 0 10px;
+  padding: 0 20px;
 
   display: flex;
   flex-direction: column;
@@ -104,6 +110,12 @@ export const Product = styled.div`
     height: 70px;
     border-radius: 50%;
     margin: 10px 0 15px;
+  }
+
+  p {
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
   }
 
   p, strong {
@@ -120,7 +132,7 @@ export const AddButton = styled.button`
   justify-content: center;
 
   border-radius: 4px;
-  width: 80%;
+  width: 120%;
   padding: 4px 0;
 
   border: 0;
