@@ -33,3 +33,40 @@ export const Container = styled.div`
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.40);
     }
 `;
+
+export const Title = styled.h1`
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+`
+
+export const Product = styled.div`
+  width: 130px;
+  height: 160px;
+    border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 20px 0;
+  }
+
+p, strong {
+    font-size: 10px;
+    color: #000;
+
+  }
+
+`
+export const AddButton = styled.button`
+  display: flex;
+  align-items: center;
+ 
+
+  font-size: 10px;
+  color: #000;
+`
