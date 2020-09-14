@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    background-color: rgba(1, 115, 186, 0.05); 
+    background-color: rgba(31, 56, 204, 0.1); 
     max-width: 960px;
     height: 100%;
 
@@ -17,11 +17,23 @@ export const Container = styled.div`
       align-items: center;
       justify-content: space-between;
 
+      .logo {
+        display: flex;
+        align-items: center;
 
-      img {
-        width: 80px;
-        margin-top: 20px;
+          img {
+          width: 120px;
+          margin-top: 20px;
+        }
+
+        p {
+          margin-top: 3px;
+          margin-left: -5px;
+          font-size: 22px;
+          font-weight: 700;
+        }
       }
+      
 
       span {
         width: 35px;
@@ -65,7 +77,7 @@ export const Container = styled.div`
       justify-content: space-between;
 
       padding: 10px 0;
-      background: #0074bc;
+      background: rgba(8, 14, 51, 1);
 
       svg {
         margin-right: 20px;
@@ -152,7 +164,7 @@ export const AddButton = styled.button`
   border: 0;
   outline: 0;
 
-  background: #1898F4;
+  background: #2039CC;
 
   font-size: 10px;
   font-weight: bold;

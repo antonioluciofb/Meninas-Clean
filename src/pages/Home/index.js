@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/cart';
 import api from '../../services/api';
 import produtos from '../../data';
+import logo from "../../assets/logo.png"
 
 function Home() {
   const { addToCart } = useCart();
@@ -22,9 +23,15 @@ function Home() {
   return (
     <Container>
     <header>
-      <img src="https://svgsilh.com/svg/2899790-3f51b5.svg" alt="logo" />
+      <div className="logo">
+      <img src={logo} alt="logo" />
+      <p className="text">Meninas <br/> Clean</p>
+      </div>
+
+      
+
       <Link to="/cart">
-        <FaShoppingBag size={60} color="#000" />
+        <FaShoppingBag size={60} color="#0C154A" />
         <span>3</span>
       </Link>
       
