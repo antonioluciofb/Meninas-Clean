@@ -1,10 +1,11 @@
+import logo from "./assets/lavaroupa.png"
 
 const produtos = {
     casa: [
       {
         id: 1,
         nome: "Desengordurante 2l",
-        image_url: "",
+        image_url: logo,
         valor: "R$12,00"
       },
       {
