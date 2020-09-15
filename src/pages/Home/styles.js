@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    background-color: rgba(31, 56, 204, 0.1); 
+    background-color: rgba(31, 56, 204, 0.1);
     max-width: 960px;
     height: 100%;
 
@@ -58,9 +58,11 @@ export const Container = styled.div`
 
     input {
     
-      margin-top: 30px;  
-      font-family: Arial, Helvetica, sans-serif;  
+      margin-top: 10px;  
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
       width: 90%;
+      font-size: 18px;
+      font-weight: 700;
       height: 40px;
       border-radius: 5px;
       border: 0;
@@ -134,7 +136,7 @@ export const Product = styled.div`
   img {
     width: 70px;
     height: 70px;
-    border-radius: 50%;
+    border-radius: 10%;
     margin: 10px 0 15px;
   }
 
