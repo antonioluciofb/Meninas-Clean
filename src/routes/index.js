@@ -8,7 +8,7 @@ import Cart from '../pages/Cart';
 function Routes() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" exact component={Home} />
       <Route path="/cart" component={Cart} />
     </Switch>
   );

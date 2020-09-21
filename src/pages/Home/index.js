@@ -24,11 +24,14 @@ function Home() {
     <Container>
     <header>
       <div className="logo">
+      <Link to="/">
       <img src={logo} alt="logo" />
+      </Link>
       <p className="text">Meninas <br/> Clean</p>
       </div>
 
-      
+       
+         
 
       <Link to="/cart">
         <FaShoppingBag size={60} color="#0C154A" />
