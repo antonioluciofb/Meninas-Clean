@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {Container, Product, Menu, Contact, Options} from './styles';
-import { FiInstagram, AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/all";
+import { FiInstagram, BsTrash , AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/all";
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/cart';
 import produtos from '../../data';
@@ -8,8 +8,8 @@ import logo from "../../assets/logo.png"
 import img from "../../assets/a5l.png";
 
 function Cart() {
-  const { addToCart } = useCart();
-  const [products, setProducts] = useState(produtos);
+  const { addToCart, removeToCart, increment, decrement, products } = useCart();
+
 
   // useEffect(() => {
   //   async function loadProducts() {
@@ -40,17 +40,19 @@ function Cart() {
 
     <Menu>
 
-      <Product>
+      {products.map(product => (
+        <div className="menuItem">
+        <Product>
 
         <div className="info">
 
-        <img src={img} alt="alcool" />
+        <img src={product.image_url} alt="alcool" />
 
           <div>
 
-          <p>ÁLCOOL PERFURMADO</p>
+          <p>{product.nome}</p>
 
-          <p>R$ 10,00</p>
+          <p>{product.valor}</p>
 
           </div>
           
@@ -58,15 +60,33 @@ function Cart() {
 
         <Options>
           
-          <button><AiOutlineMinusCircle size={20} color="rgba(8, 14, 51, 1);"/></button>
+          <button type="button" onClick={() => increment(product)}>
+            <AiOutlineMinusCircle size={20} color="rgba(8, 14, 51, 1)"/>
+            </button>
           
-          <p>1</p>
+          <p>{product.quantity}</p>
         
-          <button><AiOutlinePlusCircle size={20} color="rgba(8, 14, 51, 1);"/></button>
+          <button type="button" onClick={() => decrement(product)}>
+            <AiOutlinePlusCircle size={20} color="rgba(8, 14, 51, 1)"/>
+            </button>
+
 
         </Options>
 
+        
       </Product>
+
+      <button className="lixo" type="button" onClick={() => {
+        removeToCart(product)
+        console.log('foi')
+      }}>
+            <BsTrash size={20} color="rgba(8, 14, 51, 1)" /> 
+        </button>
+
+      </div>
+      ))}
+
+      
 
     </Menu>
     

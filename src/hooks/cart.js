@@ -16,11 +16,14 @@ function CartProvider({children}) {
       
       if (allProducts) {
         setProducts([...JSON.parse(allProducts)]);
+        
       }
     }
 
     loadProducts();
   }, []);
+
+  console.log(products)
 
   const addToCart = useCallback(
     product => {
@@ -42,6 +45,24 @@ function CartProvider({children}) {
     },
     [products],
   );
+
+  const removeToCart = useCallback(product => {
+    
+    const thisProduct = products.find(item => item.id === product.id);
+    if (thisProduct) {
+      
+      const outroArray = products.filter(item => item.id !== thisProduct.id )
+
+    setProducts(outroArray)
+
+
+      console.log(products)
+      console.log(outroArray)
+     
+      // localStorage.removeItem('@Product');
+      localStorage.setItem('@Product', JSON.stringify(outroArray));
+    }
+  }, [products])
 
   const increment = useCallback(
     id => {
@@ -74,8 +95,8 @@ function CartProvider({children}) {
   );
 
   const value = React.useMemo(
-    () => ({ addToCart, increment, decrement, products }),
-    [products, addToCart, increment, decrement],
+    () => ({ addToCart, removeToCart, increment, decrement, products }),
+    [products, addToCart, increment, decrement, removeToCart],
   );
 
 

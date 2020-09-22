@@ -8,8 +8,7 @@ import produtos from '../../data';
 import logo from "../../assets/logo.png"
 
 function Home() {
-  const { addToCart } = useCart();
-  const [products, setProducts] = useState(produtos);
+  const { addToCart, products } = useCart();
 
   function handleAddToCart(product) {
     addToCart(product);
@@ -17,8 +16,6 @@ function Home() {
     console.log(product);
   }
 
-
-  var value = 0
   
   return (
     <Container>
@@ -32,7 +29,7 @@ function Home() {
 
       <Link to="/cart">
         <FaShoppingBag size={60} color="#0C154A" />
-        <span>{value}</span>
+        <span>{products.length}</span>
       </Link>
       
     </header>
@@ -45,7 +42,7 @@ function Home() {
    </Title>
 
     <Menu>
-      {products.casa.map(product => 
+      {produtos.casa.map(product => 
         (
           <Product key={product.id}>
               <img src={product.image_url} alt={product.nome} />
@@ -67,7 +64,7 @@ function Home() {
       </Title>
 
       <Menu>
-      { products !== undefined && products.roupas.map(product => 
+      {produtos.roupas.map(product => 
         (
           <Product key={product.id}>
               <img src={product.image_url} alt={product.nome} />

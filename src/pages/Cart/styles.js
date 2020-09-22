@@ -83,6 +83,26 @@ export const Menu = styled.div`
 	flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .menuItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    
+  }
+
+  .lixo{
+    border: 0;
+    outline: 0;
+    background: transparent;
+    margin-top: 15px;
+    margin-right: 20px;
+    /* position: absolute;
+    right: -25px;
+    top: 35px; */
+  }
 `
 
 export const Product = styled.div`
@@ -91,6 +111,7 @@ export const Product = styled.div`
   border-radius: 8px;
 
   margin-top: 15px;
+  margin-left: 20px;
   padding: 10px;
   box-shadow: 5px 5px 15px rgba(0,0,0,0.25);
   display: flex;
@@ -108,7 +129,7 @@ export const Product = styled.div`
     }
 
     p {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
     }
   }
