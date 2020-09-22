@@ -11,15 +11,15 @@ function Home() {
   const { addToCart } = useCart();
   const [products, setProducts] = useState(produtos);
 
-  // useEffect(() => {
-  //   async function loadProducts() {
-  //     const response = await api.get('produtos');
-  //     setProducts(response.data)
-  //   }
+  function handleAddToCart(product) {
+    addToCart(product);
 
-  //   loadProducts()
-  // }, [])
+    console.log(product);
+  }
 
+
+  var value = 0
+  
   return (
     <Container>
     <header>
@@ -28,14 +28,11 @@ function Home() {
       <img src={logo} alt="logo" />
       </Link>
       <p className="text">Meninas <br/> Clean</p>
-      </div>
-
-       
-         
+      </div>         
 
       <Link to="/cart">
         <FaShoppingBag size={60} color="#0C154A" />
-        <span>3</span>
+        <span>{value}</span>
       </Link>
       
     </header>
@@ -48,14 +45,15 @@ function Home() {
    </Title>
 
     <Menu>
-      { products !== undefined && products.casa.map(product => 
+      {products.casa.map(product => 
         (
           <Product key={product.id}>
               <img src={product.image_url} alt={product.nome} />
               <p>{product.nome}</p>
+              <p>{product.tamanho}</p>
               <strong>{product.valor}</strong>
 
-              <AddButton type="button"> 
+              <AddButton type="button" onClick={() => handleAddToCart(product)}> 
                 <FaShoppingBag size={14} color="#fff" />
                 ADICIONAR
               </AddButton>
@@ -74,6 +72,7 @@ function Home() {
           <Product key={product.id}>
               <img src={product.image_url} alt={product.nome} />
               <p>{product.nome}</p>
+              <p>{product.tamanho}</p>
               <strong>{product.valor}</strong>
 
               <AddButton type="button"> 

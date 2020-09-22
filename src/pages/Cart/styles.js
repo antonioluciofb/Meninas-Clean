@@ -32,27 +32,14 @@ export const Container = styled.div`
           font-size: 22px;
           font-weight: 700;
         }
-      }
+
+          }
       
-
-      span {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        background: brown;
-
-        color: #fff;
-        font-weight: bold;
-        font-size: 20px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: absolute;
-        top: 25px;
-        right: -10px;
-      }
+          strong {
+          text-align: center;
+          font-size: 15px;
+                }
+    
     }
 
 
@@ -87,94 +74,64 @@ export const Container = styled.div`
     }
 `;
 
-export const Title = styled.h1`
-
-  margin-top: 35px;
-  margin-left: 20px;
-
-  align-self: flex-start;
-  font-size: 18px;
-  font-weight: bold;
-  color: #000;
-
-  display: flex;
-  align-items: center;
-
-  svg {
-    margin-left: 8px;
-  }
-`
-
 export const Menu = styled.div`
 
   margin-top: 15px;
   width: 100%;
-  height: 200px;
+  height: 100%;
   display: flex;
-	overflow-x: scroll;
-  
-
-`
-
-
-export const Product = styled.div`
-
-  width: 150px;
-  height: 175px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-
-  margin: 0 10px;
-  padding: 0 20px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  background: #fff;
-
-  img {
-    width: 70px;
-    height: 70px;
-    border-radius: 10%;
-    margin: 10px 0 15px;
-  }
-
-  p {
-    text-align: center;
-    width: 100%;
-    font-weight: 600;
-  }
-
-  p, strong {
-    font-size: 10px;
-    color: #000;
-    margin-bottom: 5px;
-  }
-
-`
-export const AddButton = styled.button`
-  cursor: pointer;
-  display: flex;
+	flex-direction: column;
   align-items: center;
   justify-content: center;
+`
 
-  border-radius: 4px;
-  width: 120%;
-  padding: 4px 0;
+export const Product = styled.div`
+  background-color: #FFF;
+  width: 80%;
+  border-radius: 8px;
 
-  border: 0;
-  outline: 0;
+  margin-top: 15px;
+  padding: 10px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  background: #2039CC;
+  div.info{
+    display: flex;
+    align-items: center;
 
-  font-size: 10px;
-  font-weight: bold;
-  color: #fff;
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
 
-  svg {
-    margin-right: 8px;
+    p {
+      font-size: 10px;
+      font-weight: 700;
+    }
   }
+
+  
+`
+
+export const Options = styled.div`
+
+    display: flex;
+
+    button {
+      cursor: pointer;
+      outline: 0;
+      border: 0;
+      background: transparent;
+
+      svg {
+      margin: 0 6px;
+    }
+
+    }
+    
 `
 
 export const Contact = styled.div`

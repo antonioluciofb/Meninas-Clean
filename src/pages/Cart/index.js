@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import {Container, Title, Product, AddButton, Menu, Contact} from './styles';
-import { FaShoppingBag, BsHouseFill, FaTshirt, FiInstagram } from "react-icons/all";
+import {Container, Product, Menu, Contact, Options} from './styles';
+import { FiInstagram, AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/all";
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/cart';
-import api from '../../services/api';
 import produtos from '../../data';
 import logo from "../../assets/logo.png"
+import img from "../../assets/a5l.png";
 
 function Cart() {
   const { addToCart } = useCart();
@@ -20,6 +20,8 @@ function Cart() {
   //   loadProducts()
   // }, [])
 
+  var value = "R$100,00"
+
   return (
     <Container>
     <header>
@@ -32,56 +34,41 @@ function Cart() {
 
       
 
-      <Link to="/cart">
-        <FaShoppingBag size={60} color="#0C154A" />
-        <span>3</span>
-      </Link>
+    <strong>VALOR TOTAL: <br/> {value}</strong>
       
     </header>
 
-   <input type="text" placeholder="Pesquise pelo nome produto"/>
-
-   <Title>
-     PRODUTOS PARA CASA
-     <BsHouseFill size={20} color="#000" />
-   </Title>
-
     <Menu>
-      { products !== undefined && products.casa.map(product => 
-        (
-          <Product key={product.id}>
-              <img src={product.image_url} alt={product.nome} />
-              <p>{product.nome}</p>
-              <strong>{product.valor}</strong>
 
-              <AddButton type="button"> 
-                <FaShoppingBag size={14} color="#fff" />
-                ADICIONAR
-              </AddButton>
-       </Product>
-        ))}
-      </Menu>
+      <Product>
 
-      <Title>
-     PRODUTOS PARA ROUPAS
-     <FaTshirt size={20} color="#000" />
-      </Title>
+        <div className="info">
 
-      <Menu>
-      { products !== undefined && products.roupas.map(product => 
-        (
-          <Product key={product.id}>
-              <img src={product.image_url} alt={product.nome} />
-              <p>{product.nome}</p>
-              <strong>{product.valor}</strong>
+        <img src={img} alt="alcool" />
 
-              <AddButton type="button"> 
-                <FaShoppingBag size={14} color="#fff" />
-                ADICIONAR
-              </AddButton>
-       </Product>
-        ))}
-      </Menu>
+          <div>
+
+          <p>ÁLCOOL PERFURMADO</p>
+
+          <p>R$ 10,00</p>
+
+          </div>
+          
+        </div>
+
+        <Options>
+          
+          <button><AiOutlineMinusCircle size={20} color="rgba(8, 14, 51, 1);"/></button>
+          
+          <p>1</p>
+        
+          <button><AiOutlinePlusCircle size={20} color="rgba(8, 14, 51, 1);"/></button>
+
+        </Options>
+
+      </Product>
+
+    </Menu>
     
     <footer>
       <Contact>

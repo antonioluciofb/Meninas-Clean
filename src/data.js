@@ -15,89 +15,103 @@ const produtos = {
     casa: [
       {
         id: 1,
-        nome: "Desengordurante 2l",
+        nome: "Desengordurante",
         image_url: d2l,
-        valor: "R$12,00"
+        valor: "R$12,00",
+        tamanho: "2l",
       },
       {
         id: 2,
-        nome: "Desinfetante 5l",
+        nome: "Desinfetante",
         image_url: d5l,
-        valor: "R$17,00"
+        valor: "R$17,00",
+        tamanho: "5l",
       },
       {
         id: 3,
-        nome: "Pinho Gel 2l",
+        nome: "Pinho Gel",
         image_url: pg2l,
-        valor: "R$12,00"
+        valor: "R$12,00",
+        tamanho: "2l",
       },
       {
         id: 4,
-        nome: "Pinho Gel 5l",
+        nome: "Pinho Gel",
         image_url: pg5l,
-        valor: "R$25,00"
+        valor: "R$25,00",
+        tamanho: "5l",
       },
       {
         id: 5,
-        nome: "Álcool Perfumado 2l",
+        nome: "Álcool Perfumado",
         image_url: ap2l,
-        valor: "R$12,00"
+        valor: "R$12,00",
+        tamanho: "2l",
       },
       {
         id: 6,
-        nome: "Brilho Alumínio 2l",
-        image_url: "",
-        valor: "R$12,00"
+        nome: "Brilho Alumínio",
+        image_url: ap2l,
+        valor: "R$12,00",
+        tamanho: "2l",
       },
       {
         id: 7,
-        nome: "Brilho Alumínio 2l",
-        image_url: "",
-        valor: "R$12,00"
+        nome: "Brilho Alumínio",
+        image_url: ap2l,
+        valor: "R$12,00",
+        tamanho: "2l",
       },
       {
         id: 8,
-        nome: "Sabonete 1l",
-        image_url: "",
-        valor: "R$12,00"
+        nome: "Sabonete",
+        image_url: ap2l,
+        valor: "R$12,00",
+        tamanho: "1l",
       }
     ],
     roupas: [
       {
         id: 1,
-        nome: "Sabão de Coco 5l",
+        nome: "Sabão de Coco",
         image_url: sc5l,
-        valor: "R$22,00"
+        valor: "R$22,00",
+        tamanho: "5l",
       },
       {
         id: 2,
-        nome: "Sabão tipo OMO 5l",
+        nome: "Sabão tipo OMO",
         image_url: t5l,
-        valor: "R$22,00"
+        valor: "R$22,00",
+        tamanho: "5l",
       },
       {
         id: 3,
-        nome: "Alvejante Sem Cloro 2l",
+        nome: "Alvejante Sem Cloro",
         image_url: asc2l,
-        valor: "R$12,00"
+        valor: "R$12,00",
+        tamanho: "2l",
       },
       {
         id: 4,
-        nome: "Alvejante Sem Cloro 5l",
+        nome: "Alvejante Sem Cloro",
         image_url: asc5l,
-        valor: "R$25,00"
+        valor: "R$25,00",
+        tamanho: "5l",
       },
       {
         id: 5,
-        nome: "Cloro Puro 5l",
+        nome: "Cloro Puro",
         image_url: cp5l,
-        valor: "R$17,00"
+        valor: "R$17,00",
+        tamanho: "5l",
       },
       {
         id: 6,
-        nome: "Amaciante 5l",
+        nome: "Amaciante",
         image_url: a5l,
-        valor: "R$22,00"
+        valor: "R$22,00",
+        tamanho: "5l",
       }
     ]
   };

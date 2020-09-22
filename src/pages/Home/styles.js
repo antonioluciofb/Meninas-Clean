@@ -8,6 +8,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 10px;
 
     header {
       margin: 20px;
@@ -42,7 +43,7 @@ export const Container = styled.div`
         background: #E52B2B;
 
         color: #fff;
-        font-weight: bold;
+        font-weight: 700;
         font-size: 20px;
 
         display: flex;
@@ -59,16 +60,16 @@ export const Container = styled.div`
     input {
     
       margin-top: 10px;  
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
       width: 90%;
       font-size: 18px;
-      font-weight: 700;
+      font-weight: 400;
       height: 40px;
       border-radius: 5px;
       border: 0;
       text-align: center;
       padding-left: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.40);
+      font-family: "Balsamiq Sans", sans-serif;
     }
 
     footer {
@@ -94,7 +95,7 @@ export const Title = styled.h1`
 
   align-self: flex-start;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 700;
   color: #000;
 
   display: flex;
@@ -111,16 +112,19 @@ export const Menu = styled.div`
   width: 100%;
   height: 200px;
   display: flex;
-	overflow-x: scroll;
-  
+  overflow-x: scroll;
+ 
 
 `
 
 
 export const Product = styled.div`
 
+ 
+
   width: 150px;
-  height: 175px;
+  height: 185px;
+  position: relative;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 
@@ -142,7 +146,7 @@ export const Product = styled.div`
 
   p {
     text-align: center;
-    width: 100%;
+    width: 140%;
     font-weight: 600;
   }
 
@@ -159,8 +163,12 @@ export const AddButton = styled.button`
   align-items: center;
   justify-content: center;
 
+  position: absolute;
+  bottom: 10px;
+
+
   border-radius: 4px;
-  width: 120%;
+  width: 80%;
   padding: 4px 0;
 
   border: 0;
@@ -169,7 +177,7 @@ export const AddButton = styled.button`
   background: #2039CC;
 
   font-size: 10px;
-  font-weight: bold;
+  font-weight: 700;
   color: #fff;
 
   svg {
