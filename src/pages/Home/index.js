@@ -31,9 +31,12 @@ function Home() {
   }, [products, searchValue])
 
   function handleAddToCart(product) {
-    addToCart(product);
 
-    console.log(product);
+    if (products.find(item => item.id === product.id)) {
+      return
+    }
+    addToCart(product)
+  
   }
 
   
