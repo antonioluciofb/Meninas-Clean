@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {Container, Title, Product, AddButton, Menu, Contact} from './styles';
 import { FaShoppingBag, BsHouseFill, FaTshirt, FiInstagram } from "react-icons/all";
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/cart';
-import api from '../../services/api';
 import produtos from '../../data';
 import logo from "../../assets/logo.png"
+import formatValue from '../../utils/formatValue';
 
 function Home() {
   const { addToCart, products } = useCart();
@@ -48,7 +48,7 @@ function Home() {
               <img src={product.image_url} alt={product.nome} />
               <p>{product.nome}</p>
               <p>{product.tamanho}</p>
-              <strong>{product.valor}</strong>
+              <strong>{formatValue(product.valor)}</strong>
 
               <AddButton type="button" onClick={() => handleAddToCart(product)}> 
                 <FaShoppingBag size={14} color="#fff" />
@@ -70,9 +70,9 @@ function Home() {
               <img src={product.image_url} alt={product.nome} />
               <p>{product.nome}</p>
               <p>{product.tamanho}</p>
-              <strong>{product.valor}</strong>
+              <strong>{formatValue(product.valor)}</strong>
 
-              <AddButton type="button"> 
+              <AddButton type="button" onClick={() => handleAddToCart(product)}> 
                 <FaShoppingBag size={14} color="#fff" />
                 ADICIONAR
               </AddButton>

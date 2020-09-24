@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, {useMemo} from 'react';
 import {Container, Product, Menu, Contact, Options} from './styles';
 import { FiInstagram, BsTrash , AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/all";
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/cart';
-import produtos from '../../data';
+import formatValue from '../../utils/formatValue';
 import logo from "../../assets/logo.png"
-import img from "../../assets/a5l.png";
+
 
 function Cart() {
-  const { addToCart, removeToCart, increment, decrement, products } = useCart();
+  const { removeToCart, increment, decrement, products } = useCart();
+  console.log(products)
+  const cartTotal = useMemo(() => {
+    const total = products.reduce((accumulator, product) => {
+      const subTotal = product.valor * product.quantity;
+      console.log(subTotal)
+      return accumulator + subTotal;
+    }, 0);
+
+    console.log(total)
+    return formatValue(total);
+  }, [products]);
 
 
-  // useEffect(() => {
-  //   async function loadProducts() {
-  //     const response = await api.get('produtos');
-  //     setProducts(response.data)
-  //   }
-
-  //   loadProducts()
-  // }, [])
-
-  var value = "R$100,00"
-
+  console.log(cartTotal)
   return (
     <Container>
     <header>
@@ -34,11 +35,12 @@ function Cart() {
 
       
 
-    <strong>VALOR TOTAL: <br/> {value}</strong>
+    <strong>VALOR TOTAL: <br/> {cartTotal}</strong>
       
     </header>
 
     <Menu>
+      {products.length === 0 && <p>Seu carrinho está vazio</p>}
 
       {products.map(product => (
         <div className="menuItem">
@@ -52,7 +54,7 @@ function Cart() {
 
           <p>{product.nome}</p>
 
-          <p>{product.valor}</p>
+          <p>{formatValue(product.valor)}</p>
 
           </div>
           
@@ -60,13 +62,13 @@ function Cart() {
 
         <Options>
           
-          <button type="button" onClick={() => increment(product)}>
+          <button type="button" onClick={() => decrement(product.id)}>
             <AiOutlineMinusCircle size={20} color="rgba(8, 14, 51, 1)"/>
             </button>
           
           <p>{product.quantity}</p>
         
-          <button type="button" onClick={() => decrement(product)}>
+          <button type="button" onClick={() => increment(product.id)}>
             <AiOutlinePlusCircle size={20} color="rgba(8, 14, 51, 1)"/>
             </button>
 
