@@ -23,8 +23,6 @@ function CartProvider({children}) {
     loadProducts();
   }, []);
 
-  console.log(products)
-
   const addToCart = useCallback(
     product => {
       const thisProduct = products.find(item => item.id === product.id);
@@ -53,12 +51,7 @@ function CartProvider({children}) {
       
       const outroArray = products.filter(item => item.id !== thisProduct.id )
 
-    setProducts(outroArray)
-
-
-      console.log(products)
-      console.log(outroArray)
-     
+      setProducts(outroArray)
       // localStorage.removeItem('@Product');
       localStorage.setItem('@Product', JSON.stringify(outroArray));
     }

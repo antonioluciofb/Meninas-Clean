@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {Container, Title, Product, AddButton, Menu, Contact} from './styles';
 import { FaShoppingBag, BsHouseFill, FaTshirt, FiInstagram } from "react-icons/all";
 import { Link } from 'react-router-dom';
@@ -9,6 +9,26 @@ import formatValue from '../../utils/formatValue';
 
 function Home() {
   const { addToCart, products } = useCart();
+  const [allProducts, setAllProducts] = useState(produtos);
+  const [searchValue, setSearchValue] = useState('');
+
+  useEffect(() => {
+
+    const findProductsCasa = produtos.casa.filter(item => item.nome.includes(searchValue));
+    const findProductsRoupa = produtos.roupas.filter(item => item.nome.includes(searchValue));
+  
+    const searchProducts = {
+      casa: findProductsCasa,
+      roupas: findProductsRoupa,
+    }
+
+    if (findProductsCasa.length > 0 || findProductsRoupa.length > 0) {
+      setAllProducts(searchProducts)
+    } else {
+      setAllProducts(produtos)
+    }
+  
+  }, [products, searchValue])
 
   function handleAddToCart(product) {
     addToCart(product);
@@ -34,7 +54,7 @@ function Home() {
       
     </header>
 
-   <input type="text" placeholder="Pesquise pelo nome produto"/>
+   <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="Pesquise pelo nome produto"/>
 
    <Title>
      PRODUTOS PARA CASA
@@ -42,7 +62,7 @@ function Home() {
    </Title>
 
     <Menu>
-      {produtos.casa.map(product => 
+      {allProducts.casa.map(product => 
         (
           <Product key={product.id}>
               <img src={product.image_url} alt={product.nome} />
@@ -52,7 +72,7 @@ function Home() {
 
               <AddButton type="button" onClick={() => handleAddToCart(product)}> 
                 <FaShoppingBag size={14} color="#fff" />
-                ADICIONAR
+                {products.find(item => item.id === product.id) ? 'ADICIONADO' : 'ADICIONAR'}
               </AddButton>
        </Product>
         ))}
@@ -64,7 +84,7 @@ function Home() {
       </Title>
 
       <Menu>
-      {produtos.roupas.map(product => 
+      {allProducts.roupas.map(product => 
         (
           <Product key={product.id}>
               <img src={product.image_url} alt={product.nome} />
@@ -74,7 +94,7 @@ function Home() {
 
               <AddButton type="button" onClick={() => handleAddToCart(product)}> 
                 <FaShoppingBag size={14} color="#fff" />
-                ADICIONAR
+                {products.find(item => item.id === product.id) ? 'ADICIONADO' : 'ADICIONAR'}
               </AddButton>
        </Product>
         ))}
