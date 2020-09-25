@@ -75,7 +75,7 @@ function CartProvider({children}) {
   const decrement = useCallback(
     async id => {
       const newProducts = products.map(product =>
-        product.id === id
+        product.id === id && product.quantity > 0
           ? { ...product, quantity: product.quantity - 1 }
           : product,
       );

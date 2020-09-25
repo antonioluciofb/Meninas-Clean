@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react';
 import {Container, Product, Menu, Contact, Options} from './styles';
-import { FiInstagram, BsTrash , AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/all";
+import { FiInstagram, BsTrash , AiOutlineMinusCircle, AiOutlinePlusCircle, AiOutlineWhatsApp } from "react-icons/all";
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/cart';
 import formatValue from '../../utils/formatValue';
@@ -91,7 +91,9 @@ function Cart() {
       
 
     </Menu>
-    
+    {/* <ButtonWhatsApp>
+      <AiOutlineWhatsApp size={20} color="rgba(8, 14, 51, 1)" />
+    </ButtonWhatsApp> */}
     <footer>
       <Contact>
         <strong>Entre em contato:</strong>
