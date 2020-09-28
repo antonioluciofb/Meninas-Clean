@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {Container, Product, Menu, Contact, Options} from './styles';
+import {Container, Product, Menu, Contact, Options, ButtonWhatsApp} from './styles';
 import { FiInstagram, BsTrash , AiOutlineMinusCircle, AiOutlinePlusCircle, AiOutlineWhatsApp } from "react-icons/all";
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/cart';
@@ -9,20 +9,33 @@ import logo from "../../assets/logo.png"
 
 function Cart() {
   const { removeToCart, increment, decrement, products } = useCart();
-  console.log(products)
+
   const cartTotal = useMemo(() => {
     const total = products.reduce((accumulator, product) => {
       const subTotal = product.valor * product.quantity;
-      console.log(subTotal)
       return accumulator + subTotal;
     }, 0);
 
-    console.log(total)
     return formatValue(total);
-  }, [products]);
+  }, [products]);  
 
 
-  console.log(cartTotal)
+  function joinArrayObjs(ar) {
+    var str = `Olá, eu gostaria de fazer esses pedidos:
+
+`;
+
+    for (var i = 0; i < ar.length; i++) {
+      str +=`• ${ar[i].nome} ${ar[i].tamanho}: ${formatValue(ar[i].valor)}
+      
+`;
+    }
+    str+= `
+*Valor total*: ${cartTotal}`
+
+    return window.encodeURIComponent(str);
+}
+
   return (
     <Container>
     <header>
@@ -43,7 +56,7 @@ function Cart() {
       {products.length === 0 && <p>Seu carrinho está vazio</p>}
 
       {products.map(product => (
-        <div className="menuItem">
+        <div key={product.id} className="menuItem">
         <Product>
 
         <div className="info">
@@ -62,7 +75,10 @@ function Cart() {
 
         <Options>
           
-          <button type="button" onClick={() => decrement(product.id)}>
+          <button type="button" onClick={() => {
+            decrement(product.id)
+            product.quantity === 1 && removeToCart(product)
+            }}>
             <AiOutlineMinusCircle size={20} color="rgba(8, 14, 51, 1)"/>
             </button>
           
@@ -87,13 +103,15 @@ function Cart() {
 
       </div>
       ))}
-
-      
-
     </Menu>
-    {/* <ButtonWhatsApp>
-      <AiOutlineWhatsApp size={20} color="rgba(8, 14, 51, 1)" />
-    </ButtonWhatsApp> */}
+    
+    {products.length !== 0 && 
+      <ButtonWhatsApp 
+      href={`https://api.whatsapp.com/send?phone=5527997652470&text=${joinArrayObjs(products)}`}>
+        <AiOutlineWhatsApp size={20} color="#FFF" />
+        <p>FAZER PEDIDO</p>
+      </ButtonWhatsApp>
+    }
     <footer>
       <Contact>
         <strong>Entre em contato:</strong>

@@ -61,6 +61,7 @@ export const Container = styled.div`
     footer {
       margin-top: 30px;
       width: 100%;
+      height: 250px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -78,7 +79,6 @@ export const Menu = styled.div`
 
   margin-top: 15px;
   width: 100%;
-  height: 100%;
   display: flex;
 	flex-direction: column;
   align-items: center;
@@ -86,6 +86,7 @@ export const Menu = styled.div`
 
   .menuItem {
     width: 100%;
+    overflow-y: scroll;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -154,6 +155,28 @@ export const Options = styled.div`
     }
     
 `
+export const ButtonWhatsApp = styled.a`
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  
+  border: 0;
+  outline: 0;
+  background: #377E1E;
+  width: 90%;
+  height: 60px;
+  border-radius: 6px;
+
+  color: #FFF;
+
+  p {
+    margin-left: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+`;
 
 export const Contact = styled.div`
   margin-left: 20px;

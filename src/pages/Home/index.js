@@ -13,7 +13,6 @@ function Home() {
   const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
-
     const findProductsCasa = produtos.casa.filter(item => item.nome.includes(searchValue));
     const findProductsRoupa = produtos.roupas.filter(item => item.nome.includes(searchValue));
   
