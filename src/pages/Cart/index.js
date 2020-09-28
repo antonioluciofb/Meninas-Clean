@@ -26,7 +26,7 @@ function Cart() {
 `;
 
     for (var i = 0; i < ar.length; i++) {
-      str +=`• ${ar[i].nome} ${ar[i].tamanho}: ${formatValue(ar[i].valor)}
+      str +=`• ${ar[i].quantity}x ${ar[i].nome} ${ar[i].tamanho}: ${formatValue(ar[i].valor * ar[i].quantity)}
       
 `;
     }
@@ -53,53 +53,42 @@ function Cart() {
     </header>
 
     <Menu>
-      {products.length === 0 && <p>Seu carrinho está vazio</p>}
+      {products.length === 0 && <p className="carrinho">Seu carrinho está vazio</p>}
 
       {products.map(product => (
         <div key={product.id} className="menuItem">
-        <Product>
+            <Product>
+            <div className="info">
+            <img src={product.image_url} alt="alcool" />
+              <div>
+              <p>{product.nome}</p>
+              <p>{formatValue(product.valor)}</p>
+              </div>
+            </div>
 
-        <div className="info">
+            <Options>
+              <button type="button" onClick={() => {
+                decrement(product.id)
+                product.quantity === 1 && removeToCart(product)
+                }}>
+                <AiOutlineMinusCircle size={20} color="rgba(8, 14, 51, 1)"/>
+                </button>
+              <p>{product.quantity}</p>
+              <button type="button" onClick={() => increment(product.id)}>
+                <AiOutlinePlusCircle size={20} color="rgba(8, 14, 51, 1)"/>
+                </button>
+            </Options>
+          </Product>
 
-        <img src={product.image_url} alt="alcool" />
-
-          <div>
-
-          <p>{product.nome}</p>
-
-          <p>{formatValue(product.valor)}</p>
-
-          </div>
-          
-        </div>
-
-        <Options>
-          
-          <button type="button" onClick={() => {
-            decrement(product.id)
-            product.quantity === 1 && removeToCart(product)
-            }}>
-            <AiOutlineMinusCircle size={20} color="rgba(8, 14, 51, 1)"/>
-            </button>
-          
-          <p>{product.quantity}</p>
-        
-          <button type="button" onClick={() => increment(product.id)}>
-            <AiOutlinePlusCircle size={20} color="rgba(8, 14, 51, 1)"/>
-            </button>
-
-
-        </Options>
-
-        
-      </Product>
-
-      <button className="lixo" type="button" onClick={() => {
-        removeToCart(product)
-        console.log('foi')
-      }}>
+          <button 
+          className="lixo" 
+          type="button" 
+          onClick={() => {
+          removeToCart(product)
+            console.log('foi')
+          }}>
             <BsTrash size={20} color="rgba(8, 14, 51, 1)" /> 
-        </button>
+          </button>
 
       </div>
       ))}

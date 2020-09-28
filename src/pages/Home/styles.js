@@ -117,11 +117,7 @@ export const Menu = styled.div`
 
 `
 
-
 export const Product = styled.div`
-
- 
-
   width: 150px;
   height: 185px;
   position: relative;

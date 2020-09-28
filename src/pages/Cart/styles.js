@@ -76,33 +76,29 @@ export const Container = styled.div`
 `;
 
 export const Menu = styled.div`
-
-  margin-top: 15px;
+  margin-top: 20px;
+  text-align: center;
   width: 100%;
-  display: flex;
-	flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  overflow-y: scroll;
+
+  p.carrinho {
+    margin-top: 100px;
+  }
 
   .menuItem {
     width: 100%;
-    overflow-y: scroll;
+    margin: 10px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    
   }
 
   .lixo{
     border: 0;
     outline: 0;
     background: transparent;
-    margin-top: 15px;
     margin-right: 20px;
-    /* position: absolute;
-    right: -25px;
-    top: 35px; */
   }
 `
 
@@ -111,7 +107,6 @@ export const Product = styled.div`
   width: 80%;
   border-radius: 8px;
 
-  margin-top: 15px;
   margin-left: 20px;
   padding: 10px;
   box-shadow: 5px 5px 15px rgba(0,0,0,0.25);
@@ -161,11 +156,10 @@ export const ButtonWhatsApp = styled.a`
   justify-content: center;
   margin-top: 10px;
   
-  border: 0;
-  outline: 0;
+  text-decoration: none;
   background: #377E1E;
   width: 90%;
-  height: 60px;
+  height: 80px;
   border-radius: 6px;
 
   color: #FFF;
