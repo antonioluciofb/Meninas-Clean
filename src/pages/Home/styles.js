@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-    background-color: rgba(31, 56, 204, 0.1);
+export const Container = styled.div `
+    background-color: #f4f4f4;
     width: auto;
     height: 100%;
 
@@ -88,7 +88,7 @@ export const Container = styled.div`
     }
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h1 `
 
   margin-top: 35px;
   margin-left: 20px;
@@ -106,7 +106,7 @@ export const Title = styled.h1`
   }
 `
 
-export const Menu = styled.div`
+export const Menu = styled.div `
 
   margin-top: 15px;
   width: 100%;
@@ -117,7 +117,7 @@ export const Menu = styled.div`
 
 `
 
-export const Product = styled.div`
+export const Product = styled.div `
   width: 150px;
   height: 185px;
   position: relative;
@@ -153,7 +153,7 @@ export const Product = styled.div`
   }
 
 `
-export const AddButton = styled.button`
+export const AddButton = styled.button `
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -170,7 +170,7 @@ export const AddButton = styled.button`
   border: 0;
   outline: 0;
 
-  background: #2039CC;
+  background: #0073D2;
 
   font-size: 10px;
   font-weight: 700;
@@ -181,7 +181,7 @@ export const AddButton = styled.button`
   }
 `
 
-export const Contact = styled.div`
+export const Contact = styled.div `
   margin-left: 20px;
 
   p, strong {

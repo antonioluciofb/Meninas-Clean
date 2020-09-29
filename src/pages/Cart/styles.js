@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-    background-color: rgba(31, 56, 204, 0.1);
-    max-width: 960px;
+export const Container = styled.div `
+    background-color: #f4f4f4;
+    width: auto;
     height: 100vh;
 
     display: flex;
@@ -75,7 +75,7 @@ export const Container = styled.div`
     }
 `;
 
-export const Menu = styled.div`
+export const Menu = styled.div `
   margin-top: 20px;
   text-align: center;
   width: 100%;
@@ -102,7 +102,7 @@ export const Menu = styled.div`
   }
 `
 
-export const Product = styled.div`
+export const Product = styled.div `
   background-color: #FFF;
   width: 80%;
   border-radius: 8px;
@@ -133,7 +133,7 @@ export const Product = styled.div`
   
 `
 
-export const Options = styled.div`
+export const Options = styled.div `
 
     display: flex;
 
@@ -150,7 +150,7 @@ export const Options = styled.div`
     }
     
 `
-export const ButtonWhatsApp = styled.a`
+export const ButtonWhatsApp = styled.a `
   display: flex; 
   align-items: center;
   justify-content: center;
@@ -172,7 +172,7 @@ export const ButtonWhatsApp = styled.a`
 
 `;
 
-export const Contact = styled.div`
+export const Contact = styled.div `
   margin-left: 20px;
 
   p, strong {
