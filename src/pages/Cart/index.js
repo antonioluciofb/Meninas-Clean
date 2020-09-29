@@ -96,7 +96,7 @@ function Cart() {
     
     {products.length !== 0 && 
       <ButtonWhatsApp 
-      href={`https://api.whatsapp.com/send?phone=5527997652470&text=${joinArrayObjs(products)}`}>
+      href={`https://api.whatsapp.com/send?phone=55279812641910&text=${joinArrayObjs(products)}`}>
         <AiOutlineWhatsApp size={20} color="#FFF" />
         <p>FAZER PEDIDO</p>
       </ButtonWhatsApp>
