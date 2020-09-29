@@ -50,14 +50,7 @@ const produtos = {
     {
       id: 6,
       nome: "Brilho Alumínio",
-      image_url: ap2l,
-      valor: 12,
-      tamanho: "2l",
-    },
-    {
-      id: 7,
-      nome: "Brilho Alumínio",
-      image_url: ap2l,
+      image_url: d2l,
       valor: 12,
       tamanho: "2l",
     },
