@@ -96,7 +96,7 @@ function Cart() {
     
     {products.length !== 0 && 
       <ButtonWhatsApp 
-      href={`https://api.whatsapp.com/send?phone=5527997652470&text=${joinArrayObjs(products)}`}>
+      href={`https://api.whatsapp.com/send?phone=5527981264191&text=${joinArrayObjs(products)}`}>
         <AiOutlineWhatsApp size={20} color="#FFF" />
         <p>FAZER PEDIDO</p>
       </ButtonWhatsApp>
@@ -109,10 +109,15 @@ function Cart() {
         <p>limpezameninas@gmail.com</p>
       </Contact>
 
+      <div>
+      <a href="https://api.whatsapp.com/send?phone=5527981264191">
+      <AiOutlineWhatsApp size={30} color="#fff" />
+      </a>  
 
       <a href="https://www.instagram.com/meninasclean/">
       <FiInstagram size={30} color="#fff" />
       </a>    
+      </div>
       
     </footer>
   </Container>

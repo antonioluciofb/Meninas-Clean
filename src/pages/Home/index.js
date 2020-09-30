@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Container, Title, Product, AddButton, Menu, Contact} from './styles';
-import { FaShoppingBag, BsHouseFill, FaTshirt, FiInstagram } from "react-icons/all";
+import { FaShoppingBag, BsHouseFill, FaTshirt, FiInstagram, AiOutlineWhatsApp } from "react-icons/all";
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/cart';
 import produtos from '../../data';
@@ -119,12 +119,17 @@ function Home() {
         <p>(27) 98149-2555 VIVO</p>
         <p>limpezameninas@gmail.com</p>
       </Contact>
-
+      
+      <div>
+      <a href="https://api.whatsapp.com/send?phone=5527981264191">
+      <AiOutlineWhatsApp size={30} color="#fff" />
+      </a>  
 
       <a href="https://www.instagram.com/meninasclean/">
       <FiInstagram size={30} color="#fff" />
       </a>    
-      
+      </div>
+
     </footer>
   </Container>
   );
