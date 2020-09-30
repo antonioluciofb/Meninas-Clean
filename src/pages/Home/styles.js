@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    background-color: rgba(31, 56, 204, 0.1);
+    background-color: #f4f4f4;
     width: auto;
     height: 100%;
 
@@ -170,7 +170,7 @@ export const AddButton = styled.button`
   border: 0;
   outline: 0;
 
-  background: #2039CC;
+  background: #0073d2;
 
   font-size: 10px;
   font-weight: 700;

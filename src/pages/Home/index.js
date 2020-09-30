@@ -58,7 +58,9 @@ function Home() {
 
    <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="Pesquise pelo nome produto"/>
 
-   <Title>
+  {allProducts.casa.length !== 0 && (
+    <>
+     <Title>
      PRODUTOS PARA CASA
      <BsHouseFill size={20} color="#000" />
    </Title>
@@ -80,27 +82,35 @@ function Home() {
         ))}
       </Menu>
 
-      <Title>
-     PRODUTOS PARA ROUPAS
-     <FaTshirt size={20} color="#000" />
-      </Title>
+    </>
+  )}
+  
 
-      <Menu>
-      {allProducts.roupas.map(product => 
-        (
-          <Product key={product.id}>
-              <img src={product.image_url} alt={product.nome} />
-              <p>{product.nome}</p>
-              <p>{product.tamanho}</p>
-              <strong>{formatValue(product.valor)}</strong>
+    {allProducts.roupas.length !== 0 && (
+      <>
+        <Title>
+        PRODUTOS PARA ROUPAS
+        <FaTshirt size={20} color="#000" />
+          </Title>
+        <Menu>
+        {allProducts.roupas.map(product => 
+          (
+            <Product key={product.id}>
+                <img src={product.image_url} alt={product.nome} />
+                <p>{product.nome}</p>
+                <p>{product.tamanho}</p>
+                <strong>{formatValue(product.valor)}</strong>
 
-              <AddButton type="button" onClick={() => handleAddToCart(product)}> 
-                <FaShoppingBag size={14} color="#fff" />
-                {products.find(item => item.id === product.id) ? 'ADICIONADO' : 'ADICIONAR'}
-              </AddButton>
-       </Product>
-        ))}
-      </Menu>
+                <AddButton type="button" onClick={() => handleAddToCart(product)}> 
+                  <FaShoppingBag size={14} color="#fff" />
+                  {products.find(item => item.id === product.id) ? 'ADICIONADO' : 'ADICIONAR'}
+                </AddButton>
+            </Product>
+          ))}
+        </Menu>
+      </>
+    )}
+      
     
     <footer>
       <Contact>
